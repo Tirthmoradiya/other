@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN Test - Local</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { padding: 20px; }
+        img { max-width: 300px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Local Version (Before CDN)</h1>
+    <p>This page uses local CSS and JS files.</p>
+    <img src="1.jpg" alt="Photo">
+    <button class="btn btn-primary" id="clickMe">Click Me</button>
+
+    <script src="app.js"></script>
+    <script>
+        $('#clickMe').click(() => alert('Button clicked!'));
+
+        window.addEventListener('load', () => {
+            const perf = window.performance.timing;
+            console.log("Page Load Time (Local):", perf.loadEventEnd - perf.navigationStart, "ms");
+        });
+    </script>
+</body>
+</html>
